@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: app1-service
+  namespace: dev
   labels:
     run: app1
 spec:
