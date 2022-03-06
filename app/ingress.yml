@@ -4,7 +4,8 @@ metadata:
   name: app-ingress
 spec:
   rules:
-  - http:
+  - host: app.iot
+    http:
       paths:
       - path: /
         pathType: Prefix

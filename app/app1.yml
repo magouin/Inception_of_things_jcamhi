@@ -1,27 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1
+  name: app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app1
+      app: app
   template:
     metadata:
       labels:
-        app: app1
+        app: app
     spec:
       containers:
-        - name: hello-kubernetes
-          image: paulbouwer/hello-kubernetes:1.10.1
+        - name: playground
+          image: wil42/playground:v1
           ports:
           - containerPort: 80
-          env:
-          - name: MESSAGE
-            value: "app1 message"
-          - name: PORT
-            value: "80"
           securityContext:
             allowPrivilegeEscalation: false
             runAsUser: 0
